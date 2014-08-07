@@ -1,0 +1,11 @@
+{{define "title"}}Home page{{end}}
+
+{{ define "body" }}
+Welcome to the home page!
+<br/>
+{{ sayHi }}
+<br/>
+{{ template "calendar.gohtml" }}
+{{ end }}
+
+{{ template "master.gohtml" }}
