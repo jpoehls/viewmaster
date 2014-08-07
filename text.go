@@ -10,6 +10,8 @@ type textViewEngine struct {
 	*baseViewEngine
 }
 
+// Text is a ViewEngine that uses text/template
+// to execute the templates.
 func Text() ViewEngine {
 	ve := &textViewEngine{
 		baseViewEngine: newBaseViewEngine(),
@@ -18,11 +20,13 @@ func Text() ViewEngine {
 	return ve
 }
 
+// Resolver sets the TemplateResolver to use.
 func (ve *textViewEngine) Resolver(r TemplateResolver) ViewEngine {
 	ve.resolver = r
 	return ve
 }
 
+// Funcs sets the FuncMap to use.
 func (ve *textViewEngine) Funcs(funcs FuncMap) ViewEngine {
 	ve.funcs = funcs
 	return ve

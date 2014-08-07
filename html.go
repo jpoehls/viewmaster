@@ -10,6 +10,8 @@ type htmlViewEngine struct {
 	*baseViewEngine
 }
 
+// Html is a ViewEngine that uses html/template
+// to execute the templates.
 func Html() ViewEngine {
 	ve := &htmlViewEngine{
 		baseViewEngine: newBaseViewEngine(),
@@ -18,11 +20,13 @@ func Html() ViewEngine {
 	return ve
 }
 
+// Resolver sets the TemplateResolver to use.
 func (ve *htmlViewEngine) Resolver(r TemplateResolver) ViewEngine {
 	ve.resolver = r
 	return ve
 }
 
+// Funcs sets the FuncMap to use.
 func (ve *htmlViewEngine) Funcs(funcs FuncMap) ViewEngine {
 	ve.funcs = funcs
 	return ve
