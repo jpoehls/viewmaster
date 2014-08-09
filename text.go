@@ -34,7 +34,7 @@ func (ve *textViewEngine) Funcs(funcs FuncMap) ViewEngine {
 
 // Render executes the named template and writes
 // output to the writer.
-func (ve *textViewEngine) Render(writer io.Writer, name string, data ...interface{}) error {
+func (ve *textViewEngine) Render(writer io.Writer, name string, data interface{}) error {
 
 	if ve.Resolver == nil {
 		return fmt.Errorf("resolver is nil")

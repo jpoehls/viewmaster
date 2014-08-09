@@ -25,7 +25,7 @@ type ViewEngine interface {
 
 	// Render executes the named template and
 	// outputs to the writer.
-	Render(writer io.Writer, name string, data ...interface{}) error
+	Render(writer io.Writer, name string, data interface{}) error
 }
 
 type baseViewEngine struct {
